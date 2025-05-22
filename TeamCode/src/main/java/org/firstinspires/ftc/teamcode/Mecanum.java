@@ -112,6 +112,8 @@ public class Mecanum extends LinearOpMode {
       telemetry.addData("Status", "Run Time: " + runtime);
       telemetry.addData("Front left/Right", JavaUtil.formatNumber(leftFrontPower, 4, 2) + ", " + JavaUtil.formatNumber(rightFrontPower, 4, 2));
       telemetry.addData("Back  left/Right", JavaUtil.formatNumber(leftBackPower, 4, 2) + ", " + JavaUtil.formatNumber(rightBackPower, 4, 2));
+      telemetry.addData("Axial", JavaUtil.formatNumber(axial, 4, 2));
+      telemetry.addData("Lateral", JavaUtil.formatNumber(lateral, 4, 2));
       telemetry.update();
     }
   }
