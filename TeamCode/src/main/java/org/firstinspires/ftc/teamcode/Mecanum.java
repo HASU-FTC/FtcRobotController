@@ -6,8 +6,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import org.firstinspires.ftc.robotcore.external.JavaUtil;
 
-@TeleOp(name = "Tank (Blocks to Java)")
-public class Tank extends LinearOpMode {
+@TeleOp(name = "Mecanum")
+public class Mecanum extends LinearOpMode {
 
   private DcMotor rearLeft;
   private DcMotor frontLeft;
@@ -49,6 +49,12 @@ public class Tank extends LinearOpMode {
     frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
     rearRight = hardwareMap.get(DcMotor.class, "rearRight");
     frontRight = hardwareMap.get(DcMotor.class, "frontRight");
+
+    // Set zero power behaviour
+    rearLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    frontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    rearRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    frontRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
     runtime = new ElapsedTime();
     // ########################################################################################
